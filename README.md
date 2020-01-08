@@ -89,7 +89,7 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border none
 ```
 
-## Background
+## Setting the Background
 By default, i3 doesn't set a background and it requires a third party to do that. I am using the default background provided by the Plasma theme with the name of "Andromeda".
 
 I installed these following packages:
@@ -101,4 +101,20 @@ To set up the same wallpaper in i3, add the following line to the i3 config:
 exec --no-startup-id feh --bg-scale /usr/share/plasma/look-and-feel/org.manjaro.andromeda.desktop/contents/components/artwork/background.png
 ```
 
-I hope this helped you with your Plasma i3 installation! Thanks for reading!
+## Editing the bar
+The i3 bar has a nice feature that allows it to be hidden, unless you press $mod. I enabled this, because I have the Plasma status bar.
+
+This is a my bar config. It sets the command that should be called to get the current system status, makes it a bit larger and a bit less black. To use the i3 bar instead of the plasma one, you should be able to just remove it with your mouse (navigate through the right click menus of the bar).
+
+```
+bar {
+    status_command i3status
+    mode hide
+    height 30
+    colors {
+      background #242424
+    }
+}
+```
+
+That's it! I hope this little tutorial helped you, and if you see anything you'd like to improve, absolutely feel free to do so!
