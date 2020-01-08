@@ -35,7 +35,9 @@ Name=Plasma with i3
 Comment=Plasma with i3
 ```
 
-For the following use your existing i3 config or create a new config using  ```$ i3-config-wizard```.
+The i3 installation could have installed other .desktop files, you can remove them if you'd like. I only have the default plasma.dektop and plasma-i3.desktop in my folder.
+
+For the following use your existing i3 config or create a new config using  ```$ i3-config-wizard``` (this also works when you're still in KWin).
 
 Your i3 config should be located at ~/.config/i3/config.
 
