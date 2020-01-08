@@ -39,7 +39,7 @@ The i3 installation could have installed other .desktop files, you can remove th
 
 For the following use your existing i3 config or create a new config using  ```$ i3-config-wizard``` (this also works when you're still in KWin).
 
-Your i3 config should be located at ~/.config/i3/config.
+Your i3 config should be located at ~/.config/i3/config, although other locations are possible.
 
 ## Adding stuff to the i3 config
 To improve compatibility with Plasma, add the following lines in your i3 config.
