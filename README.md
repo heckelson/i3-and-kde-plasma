@@ -91,7 +91,10 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border none
 ```
 
-## Setting the Background
+## Disabling a shortcut that breaks stuff
+Launch the Plasma System Settings and go to Workspace > Shortcuts > Global Shortcuts > Plasma and disable the shortcut "Activities" that uses the combination ```Meta+Q```.
+
+## Setting the Background (optional)
 By default, i3 doesn't set a background and it requires a third party to do that. I am using the default background provided by the Plasma theme with the name of "Andromeda".
 
 I installed these following packages:
@@ -103,7 +106,7 @@ To set up the same wallpaper in i3, add the following line to the i3 config:
 exec --no-startup-id feh --bg-scale /usr/share/plasma/look-and-feel/org.manjaro.andromeda.desktop/contents/components/artwork/background.png
 ```
 
-## Editing the bar
+## Editing the bar (optional)
 The i3 bar has a nice feature that allows it to be hidden, unless you press $mod. I enabled this, because I have the Plasma status bar.
 
 This is a my bar config. It sets the command that should be called to get the current system status, makes it a bit larger and a bit less black. To use the i3 bar instead of the plasma one, you should be able to just remove it with your mouse (navigate through the right click menus of the bar).
