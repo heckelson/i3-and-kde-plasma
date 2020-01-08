@@ -58,23 +58,30 @@ for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px, no_focus
 ```
-## Killing the existing plasma desktop that covers everything
+## Killing the existing window that covers everything
 
 Now with my installation, there was a Plasma Desktop window that covered everything and had to be closed with $mod+Shift+q every time I logged in. To circumvent that, follow this tutorial.
 
+### English Plasma installation
 If you're on an English installation of Plasma, add this line to your i3 config:
 ```for_window [title="Desktop — Plasma"] kill; floating enable; border none```
 
-If you're not on an English installation, do this. (This example is using the German Plasma installation)
-### Find out the name of your plasma desktop window
-After logging into your i3 environment, switch to a new workspace with $mod+2.Then enter the following in your terminal:
+### Non-English Plasma installation
+
+If you're not on an English installation, do this instead. This example is using the German Plasma installation.
+
+#### Find out the name of your Plasma desktop
+Directly after logging into your i3 environment, switch to a new workspace with $mod+2.Then enter the following in your terminal:
+
 ```$ wmctrl -l```
 
 The output should contain the name of the plasma desktop window. 
 ```
+...
 0x04400006  0 alex-mi Arbeitsfläche — Plasma
 ...
 ```
+#### Set it in the i3 config
 
 Using this new-found information, add the following lines to your i3 config:
 ```
