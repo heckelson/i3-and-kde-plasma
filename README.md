@@ -12,7 +12,7 @@ We're gonna install a couple packages that are required or nice-to-haves on i3. 
 * ```i3-gaps```, obviously
 * ```feh``` to set up the background
 * ```i3-dmenu-desktop``` (not required)
-* ```morc_menu``` if you don't want to use the KDE status bar
+* ```morc_menu``` (not required)
 * ```i3-status``` for the status bar of i3
 * ```wmctrl``` to add to the i3 config (if you're not on an English installation of Plasma)
 
