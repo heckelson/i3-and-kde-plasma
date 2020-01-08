@@ -16,6 +16,8 @@ We're gonna install a couple packages that are required or nice-to-haves on i3. 
 * ```i3-status``` for the status bar of i3
 * ```wmctrl``` to add to the i3 config (if you're not on an English installation of Plasma)
 
+and their dependencies.
+
 Here's how I installed everything:
 ```$ sudo pacman -S i3-gaps feh i3-dmenu-desktop morc_menu i3-status wmctrl```
 
