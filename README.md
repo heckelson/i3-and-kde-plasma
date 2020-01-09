@@ -26,9 +26,9 @@ Here's how I installed everything:
 
 # Configuration
 ## Create a new XSession
-Create a new file called plasma-i3.desktop in the /usr/share/xsessions directory as su.
+Create a new file called plasma-i3.desktop in the /usr/share/xsessions directory as su. [1]
 
-Write the following into /usr/share/xsessions/plasma-i3.desktop :
+Write the following into /usr/share/xsessions/plasma-i3.desktop:
 ```
 [Desktop Entry]
 Type=XSession
@@ -45,7 +45,7 @@ For the following use your existing i3 config or create a new config using  ```$
 Your i3 config should be located at ~/.config/i3/config, although other locations are possible.
 
 ## Adding stuff to the i3 config
-To improve compatibility with Plasma, add the following lines in your i3 config.
+To improve compatibility with Plasma, add the following lines in your i3 config. [1]
 
 ```
 # Plasma compatibility improvements
@@ -100,7 +100,7 @@ for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border non
 Launch the Plasma System Settings and go to Workspace > Shortcuts > Global Shortcuts > Plasma and disable the shortcut "Activities" that uses the combination ```Meta+Q```.
 
 ## Using the plasma shutdown screen
-To use the plasma shutdown/logout/reboot screen, delete this line (or comment out)
+To use the plasma shutdown/logout/reboot screen, delete this line (or comment out) [2]
 ```
 $bindsym $mod+Shift+e exec "i3-nagbar " ...
 ```
@@ -139,3 +139,7 @@ bar {
 ```
 
 That's it! I hope this little tutorial helped you, and if you see anything you'd like to improve, absolutely feel free to do so!
+
+Sources:
+* [\[1\] Tutorials/Using other Window Managers with Plasma -- KDE Userbase Wiki](https://userbase.kde.org/Tutorials/Using_Other_Window_Managers_with_Plasma)
+* [\[2\] Using the plasma shutdown screen](https://www.reddit.com/r/i3wm/comments/elzfhs/hey_everyone_i_wrote_a_little_guide_on_how_to_use/fdmt1b1)
