@@ -1,6 +1,9 @@
 # i3 and KDE Plasma
 How to install the i3 window manager on KDE Plasma
 
+Preview image (every screenshot needs screenfetch haha)
+![screenshot of my current setup](https://raw.githubusercontent.com/heckelson/i3-and-kde-plasma/master/Screenshot_20200109_150620.png)
+
 # Situation before installation
 * Manjaro KDE Edition, all updates installed
 * KDE plasma
