@@ -140,6 +140,21 @@ bar {
 
 That's it! I hope this little tutorial helped you, and if you see anything you'd like to improve, absolutely feel free to do so!
 
+## Enable transparency (optional)
+
+If you'd like to enable transparency, you need to install a compositor. I use picom, and it works really well with minimal (no) configuration.
+
+First, install picom: ```$ sudo pacman -S picom```
+
+Then, add this line to your i3 config:  
+```
+exec_always --no-startup-id picom
+```
+
+The result is something like this:
+
+(screenshot of my setup with transparency enabled)[https://raw.githubusercontent.com/heckelson/i3-and-kde-plasma/master/Screenshot_20200109_193930.png]
+
 Sources:
 * [\[1\] Tutorials/Using other Window Managers with Plasma -- KDE Userbase Wiki](https://userbase.kde.org/Tutorials/Using_Other_Window_Managers_with_Plasma)
 * [\[2\] Using the plasma shutdown screen](https://www.reddit.com/r/i3wm/comments/elzfhs/hey_everyone_i_wrote_a_little_guide_on_how_to_use/fdmt1b1)
