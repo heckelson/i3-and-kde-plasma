@@ -99,6 +99,17 @@ for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border non
 ## Disabling a shortcut that breaks stuff
 Launch the Plasma System Settings and go to Workspace > Shortcuts > Global Shortcuts > Plasma and disable the shortcut "Activities" that uses the combination ```Meta+Q```.
 
+## Using the plasma shutdown screen
+To use the plasma shutdown/logout/reboot screen, delete this line (or comment out)
+```
+$bindsym $mod+Shift+e exec "i3-nagbar " ...
+```
+and add the following one(s) instead:
+```
+# using plasma's logout screen instead of i3's
+bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+```
+
 ## Setting the Background (optional)
 By default, i3 doesn't set a background and it requires a third party to do that. I am using the default background provided by the Plasma theme with the name of "Andromeda".
 
