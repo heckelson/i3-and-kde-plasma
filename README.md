@@ -153,7 +153,7 @@ exec_always --no-startup-id picom
 
 The result is something like this:
 
-(screenshot of my setup with transparency enabled)[https://raw.githubusercontent.com/heckelson/i3-and-kde-plasma/master/Screenshot_20200109_193930.png]
+![screenshot of my setup with transparency enabled](https://raw.githubusercontent.com/heckelson/i3-and-kde-plasma/master/Screenshot_20200109_193930.png)
 
 Sources:
 * [\[1\] Tutorials/Using other Window Managers with Plasma -- KDE Userbase Wiki](https://userbase.kde.org/Tutorials/Using_Other_Window_Managers_with_Plasma)
