@@ -14,7 +14,7 @@ Preview image (every screenshot needs screenfetch haha)
 We're gonna install a couple packages that are required or nice-to-haves on i3. This consists of:
 * ```i3-gaps```, obviously
 * ```feh``` to set up the background
-* ```i3-dmenu-desktop``` (not required)
+* ```dmenu``` (not required)
 * ```morc_menu``` (not required)
 * ```i3-status``` for the status bar of i3
 * ```wmctrl``` to add to the i3 config (if you're not on an English installation of Plasma)
