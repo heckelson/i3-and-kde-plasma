@@ -148,7 +148,7 @@ First, install picom: ```$ sudo pacman -S picom```
 
 Then, add this line to your i3 config:  
 ```
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom -bc
 ```
 
 The result is something like this:
