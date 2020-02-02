@@ -2,7 +2,8 @@
 How to install the i3 window manager on KDE Plasma
 
 Preview image (every screenshot needs screenfetch haha)
-![screenshot of my current setup](https://raw.githubusercontent.com/heckelson/i3-and-kde-plasma/master/Screenshot_20200109_150620.png)
+
+![screenshot of my current setup](Screenshot_20200109_150620.png)
 
 # Situation before installation
 * Manjaro KDE Edition, all updates installed
@@ -143,18 +144,55 @@ That's it! I hope this little tutorial helped you, and if you see anything you'd
 ## Enable transparency (optional)
 
 If you'd like to enable transparency, you need to install a compositor. I use picom, and it works really well with minimal (no) configuration.
-
-First, install picom: ```$ sudo pacman -S picom```
+First, install picom: `$ sudo pacman -S picom`
 
 Then, add this line to your i3 config:  
-```
-exec_always --no-startup-id picom -bc
-```
+```exec_always --no-startup-id picom -bc```
 
 The result is something like this:
 
-![screenshot of my setup with transparency enabled](https://raw.githubusercontent.com/heckelson/i3-and-kde-plasma/master/Screenshot_20200109_193930.png)
+![screenshot of my setup with transparency enabled](Screenshot_20200109_193930.png)
 
-Sources:
-* [\[1\] Tutorials/Using other Window Managers with Plasma -- KDE Userbase Wiki](https://userbase.kde.org/Tutorials/Using_Other_Window_Managers_with_Plasma)
-* [\[2\] Using the plasma shutdown screen](https://www.reddit.com/r/i3wm/comments/elzfhs/hey_everyone_i_wrote_a_little_guide_on_how_to_use/fdmt1b1)
+### Dual Kawase and blur (optional)
+
+This was a bit more tricky to do. Instead of the normal picom from my repository, I used a fork called ```picom-tryone-git``` to replace my existing picom.
+
+To configure picom, I copied `/etc/xdg/picom.conf.example` to `~/.config/picom.conf`. Picom should already pick up this config. There are a couple of things you need to change.
+
+My changes were:
+
+```
+...
+shadow = true;
+shadow-radius = 12;
+...
+shadow-opacity = 1;
+shadow-red = 0.0;
+shadow-green = 0.0;
+shadow-blue = 0.0;
+...
+# inactive opacity = 1;
+...
+frame_opacity = 1;
+...
+fading = false;
+...
+backend = "glx";
+...
+blur:
+{
+method = "dual_kawase";
+size = 25;
+deviation = 5.0;
+}
+```
+
+Make sure the *blur* section is on the bottom of the file.
+
+To start picom in a way that supports kawase blur, replace the line in your i3 config that starts picom with this one:
+
+```exec --no-startup-id picom --backend glx --experimental-backends -bc```
+
+The result can look something like this:
+
+![with blur and looking good](Screenshot_20200203_005043.png)
