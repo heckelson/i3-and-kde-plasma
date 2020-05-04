@@ -64,7 +64,8 @@ for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
-for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px, no_focus
+for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+no_focus [class="plasmashell" window_type="notification"]
 ```
 ## Killing the existing window that covers everything
 
@@ -83,7 +84,7 @@ Directly after logging into your i3 environment, switch to a new workspace with 
 
 ```$ wmctrl -l```
 
-The output should contain the name of the plasma desktop window. 
+The output should contain the name of the plasma desktop window.
 ```
 ...
 0x04400006  0 alex-mi Arbeitsfläche — Plasma
@@ -146,7 +147,7 @@ That's it! I hope this little tutorial helped you, and if you see anything you'd
 If you'd like to enable transparency, you need to install a compositor. I use picom, and it works really well with minimal (no) configuration.
 First, install picom: `$ sudo pacman -S picom`
 
-Then, add this line to your i3 config:  
+Then, add this line to your i3 config:
 ```exec_always --no-startup-id picom -bc```
 
 The result is something like this:
