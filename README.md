@@ -174,7 +174,7 @@ The result is something like this:
 
 ### Dual Kawase blur (optional)
 
-This was a bit more tricky to do. Instead of the normal picom from Manjaro's repository, I used a fork called [https://aur.archlinux.org/packages/picom-tryone-git/](```picom-tryone-git```) to replace my existing picom.
+This was a bit more tricky to do. Instead of the normal picom from Manjaro's repository, I used a fork called [```picom-tryone-git```](https://aur.archlinux.org/packages/picom-tryone-git/) to replace my existing picom.
 
 To configure picom, I copied `/etc/xdg/picom.conf.example` to `~/.config/picom.conf`. Picom should already pick up this config. There are a couple of things you need to change.
 
