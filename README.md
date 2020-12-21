@@ -18,11 +18,11 @@ We're gonna install a couple packages that are required or nice-to-haves on i3. 
 * ```feh``` to set up the background
 * ```dmenu``` (not required)
 * ```morc_menu``` (not required)
-* ```i3-status``` for the status bar of i3
+* ```i3status``` for the status bar of i3
 * ```wmctrl``` to add to the i3 config (if you're not on an English installation of Plasma)
 
 Here's a oneliner on how I installed everything:
-```$ sudo pacman -Syu && sudo pacman -S i3-gaps feh i3-dmenu-desktop morc_menu i3-status wmctrl```
+```$ sudo pacman -Syu && sudo pacman -S i3-gaps feh i3-dmenu-desktop morc_menu i3status wmctrl```
 
 # Configuration
 ## Create a new XSession
@@ -105,21 +105,23 @@ for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border non
 </details>
 
 ## Disabling a shortcut that breaks stuff
-Launch the Plasma System Settings and go to *Workspace > Shortcuts > Global Shortcuts > Plasma* and disable the shortcut "Activities" that uses the combination ```Meta+Q```.
+Launch the Plasma System Settings and go to *Category Workspace > Shortcuts > Category System Services > Plasma* and disable the shortcut "Activities..." that uses the combination ```Meta+Q```.
 
 ## Using the plasma shutdown screen
 To use the plasma shutdown/logout/reboot screen, delete this line (or comment out)
 ```
-$bindsym $mod+Shift+e exec "i3-nagbar " ...
+bindsym $mod+Shift+e exec "i3-nagbar " ...
 ```
 and add the following one(s) instead:
 ```
 # using plasma's logout screen instead of i3's
 bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 ```
-*(Note: This information seems to be outdated)*
+*(Note: This seems to not work on some distros.)*
 
 ## Setting the Background (optional)
+
+*(Note: This section is outdated. The "Andromeda" packages are no longer in the Manjaro repositories.)*
 
 By default, i3 doesn't set a background and it requires a third party to do that. I am using the default background provided by the Plasma theme with the name of "Andromeda" and a program called `feh` to set the background.
 
