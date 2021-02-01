@@ -156,7 +156,7 @@ bar {
 
 That's it! I hope this little tutorial helped you, and if you see anything you'd like to improve, absolutely feel free to do so! My issues are open, as are pull requests.
 
-
+If you'd like to buy me a coffee, follow [this](https://ko-fi.com/heckelson) link.
 
 ----
 
