@@ -121,7 +121,7 @@ bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org
 ### For KDE 5
 ```
 # using plasma's logout screen instead of i3's
-bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+bindsym $mod+Shift+e exec --no-startup-id qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 ```
 *(Note: This seems to not work on some distros.)*
 ## Setting the Background (optional)
