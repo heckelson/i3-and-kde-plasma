@@ -113,12 +113,12 @@ To use the plasma shutdown/logout/reboot screen, delete this line (or comment ou
 bindsym $mod+Shift+e exec "i3-nagbar " ...
 ```
 and add the following one(s) instead:
-#For KDE 4
+### For KDE 4
 ```
 # using plasma's logout screen instead of i3's
 bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 ```
-#For KDE 5
+### For KDE 5
 ```
 # using plasma's logout screen instead of i3's
 bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
