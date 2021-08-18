@@ -16,21 +16,21 @@ We're gonna install a couple packages that are required or nice-to-haves on i3. 
 
 * ```i3-gaps```, obviously
 * ```feh``` to set up the background
-* ```dmenu``` (not required)
+* ```dmenu``` (not required, but nice to have)
 * ```morc_menu``` (not required)
 * ```i3status``` for the status bar of i3
-* ```wmctrl``` to add to the i3 config (if you're not on an English installation of Plasma)
+* ```wmctrl``` to get some info for the i3 config (if you're not on an English installation of Plasma)
 
 Here's a oneliner on how I installed everything:
 ```$ sudo pacman -Syu && sudo pacman -S i3-gaps feh i3-dmenu-desktop morc_menu i3status wmctrl```
 
 # Configuration
 ## Create a new XSession
-Create a new file called plasma-i3.desktop in the `/usr/share/xsessions` directory as su. [1]
+Create a new file called plasma-i3.desktop in the `/usr/share/xsessions` directory as su.
 
 Write the following into `/usr/share/xsessions/plasma-i3.desktop`:
 
-```
+```conf
 [Desktop Entry]
 Type=XSession
 Exec=env KDEWM=/usr/bin/i3 /usr/bin/startplasma-x11
@@ -48,7 +48,7 @@ Your i3 config should be located at `~/.config/i3/config`, although other locati
 ## Adding stuff to the i3 config
 To improve compatibility with Plasma, add the following lines in your i3 config.
 
-```
+```sh
 # Plasma compatibility improvements
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -114,16 +114,30 @@ bindsym $mod+Shift+e exec "i3-nagbar " ...
 ```
 and add the following one(s) instead:
 ### For KDE 4
-```
+```sh
 # using plasma's logout screen instead of i3's
 bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 ```
 ### For KDE 5
-```
+```sh
 # using plasma's logout screen instead of i3's
 bindsym $mod+Shift+e exec --no-startup-id qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 ```
 *(Note: This seems to not work on some distros.)*
+
+
+## Audio buttons integration
+
+To control the volume via DBus with nice popups and sounds, you can add the following lines to the i3config:
+
+```sh
+bindsym XF86AudioRaiseVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "increase_volume"
+bindsym XF86AudioLowerVolume exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "decrease_volume"
+bindsym XF86AudioMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mute"
+bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
+```
+
+
 ## Setting the Background (optional)
 
 *(Note: This section is outdated. The "Andromeda" packages are no longer in the Manjaro repositories.)*
@@ -138,9 +152,10 @@ and enabled the theming in the Plasma settings.
 
 To set up the same wallpaper in i3, add the following line to the i3 config:
 
-```
+```sh
 exec --no-startup-id feh --bg-scale /usr/share/plasma/look-and-feel/org.manjaro.andromeda.desktop/contents/components/artwork/background.png
 ```
+
 
 ## Editing the bar (optional)
 
@@ -186,7 +201,7 @@ This was a bit more tricky to do. Instead of the normal picom from Manjaro's rep
 To configure picom, I copied `/etc/xdg/picom.conf.example` to `~/.config/picom.conf`. Picom should already pick up this config. There are a couple of things you need to change.
 
 To set everything up for the blur effect, set the following settings:
-```
+```sh
 backend = "glx";
 blur_method = "dual_kawase";
 blur_deviation = true;
@@ -195,7 +210,7 @@ blur_deviation = true;
 
 To start picom in a way that supports kawase blur, replace the line in your i3 config that starts picom with this one:
 
-```
+```sh
 exec --no-startup-id picom --experimental-backends -b
 ```
 
