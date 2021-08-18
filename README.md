@@ -181,43 +181,23 @@ The result is something like this:
 
 ### Dual Kawase blur (optional)
 
-This was a bit more tricky to do. Instead of the normal picom from Manjaro's repository, I used a fork called [```picom-tryone-git```](https://aur.archlinux.org/packages/picom-tryone-git/) to replace my existing picom.
+This was a bit more tricky to do. Instead of the normal picom from Manjaro's repository, I used [picom-git](https://aur.archlinux.org/packages/picom-git/) from the AUR.
 
 To configure picom, I copied `/etc/xdg/picom.conf.example` to `~/.config/picom.conf`. Picom should already pick up this config. There are a couple of things you need to change.
 
-My changes were:
-
+To set everything up for the blur effect, set the following settings:
 ```
-...
-shadow = true;
-shadow-radius = 12;
-...
-shadow-opacity = 1;
-shadow-red = 0.0;
-shadow-green = 0.0;
-shadow-blue = 0.0;
-...
-# inactive opacity = 1;
-...
-frame_opacity = 1;
-...
-fading = false;
-...
 backend = "glx";
-...
-blur:
-{
-method = "dual_kawase";
-size = 25;
-deviation = 5.0;
-}
-```
+blur_method = "dual_kawase";
+blur_deviation = true;
 
-**Make sure the `blur:` section is on the bottom of the file.**
+```
 
 To start picom in a way that supports kawase blur, replace the line in your i3 config that starts picom with this one:
 
-```exec --no-startup-id picom --backend glx --experimental-backends -bc```
+```
+exec --no-startup-id picom --experimental-backends -b
+```
 
 The result can look something like this:
 
