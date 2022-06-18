@@ -25,13 +25,13 @@ Here's a oneliner on how I installed everything:
 ```$ sudo pacman -Syu && sudo pacman -S i3-gaps feh i3-dmenu-desktop morc_menu i3status wmctrl```
 
 # Configuration
-If you are using Plasma >= 5.25, you need to create a new service to run i3 the login to the Plasma(X11) session. If you are using Plasma < 5.25, you need to create a new XSession and login to that.
+If you are using Plasma >= 5.25, you need to create a new service to run to run i3 instead of KWin upon login. If you are using Plasma < 5.25, you need to create a new XSession and login to that.
 
 ## Creating a new service (Plasma >= 5.25)
 
-Create a new service file called plasma-i3.service in `/usr/lib/systemd/user` directory as su. 
+Create a new service file called plasma-i3.service in `$HOME/.config/systemd/user`.
 
-Write the following into `/usr/lib/systemd/user/plasma-i3.service`:
+Write the following into `$HOME/.config/systemd/user/plasma-i3.service`:
 
 ```conf
 [Unit]
@@ -47,7 +47,7 @@ WantedBy=plasma-workspace.target
 ```
 
 Mask `plasma-kwin_x11.target` by running
-```sudo systemctl mask plasma-kwin_x11.target```
+```systemctl mask plasma-kwin_x11.target --user```
 
 Enable the plasma-i3 service by running
 ```systemctl enable plasma-i3 --user```
