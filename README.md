@@ -29,10 +29,11 @@ If you are using Plasma >= 5.25, you need to create a new service to run to run 
 
 ## Creating a new service (Plasma >= 5.25)
 
+Note that for this method, you do not need to be the root user. However, that means the changes will not effect the other users.
+
 Create a new service file called plasma-i3.service in `$HOME/.config/systemd/user`.
 
 Write the following into `$HOME/.config/systemd/user/plasma-i3.service`:
-
 ```conf
 [Unit]
 Description=Launch Plasma with i3
