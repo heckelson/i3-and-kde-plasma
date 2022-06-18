@@ -25,7 +25,35 @@ Here's a oneliner on how I installed everything:
 ```$ sudo pacman -Syu && sudo pacman -S i3-gaps feh i3-dmenu-desktop morc_menu i3status wmctrl```
 
 # Configuration
-## Create a new XSession
+If you are using Plasma >= 5.25, you need to create a new service to run to run i3 instead of KWin upon login. If you are using Plasma < 5.25, you need to create a new XSession and login to that.
+
+## Creating a new service (Plasma >= 5.25)
+
+Note that for this method, you do not need to be the root user. However, that means the changes will not effect the other users.
+
+Create a new service file called plasma-i3.service in `$HOME/.config/systemd/user`.
+
+Write the following into `$HOME/.config/systemd/user/plasma-i3.service`:
+```conf
+[Unit]
+Description=Launch Plasma with i3
+Before=plasma-workspace.target
+
+[Service]
+ExecStart=/usr/bin/i3
+Restart=on-failure
+
+[Install]
+WantedBy=plasma-workspace.target
+```
+
+Mask `plasma-kwin_x11.target` by running
+```systemctl mask plasma-kwin_x11.target --user```
+
+Enable the plasma-i3 service by running
+```systemctl enable plasma-i3 --user```
+
+## Create a new XSession (Plasma < 5.25)
 Create a new file called plasma-i3.desktop in the `/usr/share/xsessions` directory as su.
 
 Write the following into `/usr/share/xsessions/plasma-i3.desktop`:
@@ -38,7 +66,7 @@ DesktopNames=KDE
 Name=Plasma with i3
 Comment=Plasma with i3
 ```
-
+---
 The i3 installation could have installed other .desktop files, you can remove them if you'd like. I only have the default `plasma.desktop` and `plasma-i3.desktop` in my folder.
 
 For the following use your existing i3 config or create a new config using  ```$ i3-config-wizard``` (this also works when you're still in KWin).
