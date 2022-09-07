@@ -92,7 +92,7 @@ for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
-for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+for_window [class="plasmashell" window_type="notification"] border none, move position 70 ppt 81 ppt
 no_focus [class="plasmashell" window_type="notification"]
 ```
 ## Killing the existing window that covers everything
@@ -101,7 +101,7 @@ With my installation, there was a Plasma Desktop window that covered everything 
 
 <details>
     <summary>English Plasma settings instructions</summary>
-    
+
 If you're on an English installation of Plasma, add this line to your i3 config:
 ```for_window [title="Desktop — Plasma"] kill; floating enable; border none```
 </details>
@@ -109,7 +109,7 @@ If you're on an English installation of Plasma, add this line to your i3 config:
 
 <details>
     <summary>Non-English Plasma settings instructions</summary>
-    
+
 If you're not on the English setting, do this instead. This example is using the German Plasma setting.
 
 #### Find out the name of your Plasma desktop
