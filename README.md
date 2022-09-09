@@ -48,7 +48,7 @@ WantedBy=plasma-workspace.target
 ```
 
 Mask `plasma-kwin_x11.target` by running
-```systemctl mask plasma-kwin_x11.target --user```
+```systemctl mask plasma-kwin_x11.service --user```
 
 Enable the plasma-i3 service by running
 ```systemctl enable plasma-i3 --user```
