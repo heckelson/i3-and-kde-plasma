@@ -3,7 +3,7 @@
 How to install the i3 window manager on KDE Plasma.
 
 > Preview image:
-> ![screenshot of my current setup](Screenshot_20200109_150620.png)
+> ![screenshot of my current setup](images/Screenshot_20200109_150620.png)
 
 ---
 
@@ -240,17 +240,21 @@ bindsym XF86AudioMute exec --no-startup-id qdbus org.kde.kglobalaccel /component
 bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
 ```
 
+---
+
+## What next?
+
+Here are a couple of advanced things that may be nice to do for a "prettier" desktop.
+
 ### Setting the Background (optional)
 
-*(Note: This section is outdated. The "Andromeda" packages are no longer in the Manjaro repositories.)*
+> NOTE: This section is outdated. The "Andromeda" packages are no longer in the Manjaro repositories. However, I am leaving it in because the principle stays the same, regardless where you save your images.
 
 By default, i3 doesn't set a background and it requires a third party program to do that. I am using the default background provided by the Plasma theme "Andromeda" and a program called `feh` to set the background.
 
 I installed these following packages for the background and theme:
 
 ```$ sudo pacman -S andromeda-wallpaper plasma5-themes-andromeda sddm-andromeda-theme andromeda-icon-theme```
-
-*(again, Andromeda is no longer available in Manjaro's repos as far as I know).*
 
 and enabled the theming in the Plasma settings.
 
@@ -266,7 +270,7 @@ The i3 bar has a nice feature that allows it to be hidden, unless you press $mod
 
 This is my bar config. It sets the command that should be called to get the current system status, makes it a bit larger and a bit less black. To use the i3 bar instead of the plasma one, you should be able to just remove it with your mouse (navigate through the right click menus of the bar).
 
-```
+```conf
 bar {
     status_command i3status
     mode hide
@@ -277,8 +281,6 @@ bar {
 }
 ```
 
-That's it! I hope this little tutorial helped you, and if you see anything you'd like to improve, absolutely feel free to do so! My issues are open, as are pull requests.
-
 ### Enable transparency (optional)
 
 If you'd like to enable transparency, you need to install a compositor. I use picom, and it works really well with minimal (no) configuration.
@@ -287,9 +289,9 @@ First, install picom: `$ sudo pacman -S picom`
 Then, add this line to your i3 config:
 ```exec_always --no-startup-id picom -bc```
 
-The result is something like this:
-
-![screenshot of my setup with transparency enabled](Screenshot_20200109_193930.png)
+> Preview image:
+>
+> ![screenshot of my setup with transparency enabled](images/Screenshot_20200109_193930.png)
 
 ### Dual Kawase blur (optional)
 
@@ -312,6 +314,10 @@ To start picom in a way that supports kawase blur, replace the line in your i3 c
 exec --no-startup-id picom --experimental-backends -b
 ```
 
-The result can look something like this:
+> Preview image:
+>
+> ![with blur and looking good](images/Screenshot_20200203_005043.png)
 
-![with blur and looking good](Screenshot_20200203_005043.png)
+---
+
+You've reached the end! That's it! I hope this little tutorial helped you, and if you see anything you'd like to improve, absolutely feel free to do so! My issues are open, as are pull requests.
