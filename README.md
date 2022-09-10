@@ -1,17 +1,24 @@
 # i3 and KDE Plasma
+
 How to install the i3 window manager on KDE Plasma.
 
-Preview image:
+> Preview image:
+> ![screenshot of my current setup](Screenshot_20200109_150620.png)
 
-![screenshot of my current setup](Screenshot_20200109_150620.png)
+---
 
-# Situation before the installation
+## Situation before the installation
+
 * Manjaro KDE Edition, all updates installed
 * KDE Plasma
 * KWin
 
-# Installation
-## Packages
+---
+
+## Installation
+
+### Packages
+
 We're gonna install a couple packages that are required or nice-to-haves on i3. This consists of:
 
 * ```i3-gaps```, obviously
@@ -24,16 +31,32 @@ We're gonna install a couple packages that are required or nice-to-haves on i3. 
 Here's a oneliner on how I installed everything:
 ```$ sudo pacman -Syu && sudo pacman -S i3-gaps feh i3-dmenu-desktop morc_menu i3status wmctrl```
 
-# Configuration
-If you are using Plasma >= 5.25, you need to create a new service to run to run i3 instead of KWin upon login. If you are using Plasma < 5.25, you need to create a new XSession and login to that.
+---
 
-## Creating a new service (Plasma >= 5.25)
+## Configuration
 
+Check your Plasma version by running:
+
+```sh
+plasmashell --version
+```
+
+If you are using Plasma >=5.25, you can either
+(i) create a new systemd user service to run to run i3 instead of KWin upon login (see option 1) or
+(ii) you can also disable systemd startup and proceed with option 2, creating a new XSession. Option 1 is per-user, whereas option 2 is systemwide and requires root.
+
+If you are using Plasma <5.25, you need to create a new XSession and login to that, which means only option 2 is available for you.
+
+<details>
+<summary>Option 1: systemd user service (Plasma >=5.25)</summary>
+
+---
 Note that for this method, you do not need to be the root user. However, that means the changes will not effect the other users.
 
 Create a new service file called plasma-i3.service in `$HOME/.config/systemd/user`.
 
 Write the following into `$HOME/.config/systemd/user/plasma-i3.service`:
+
 ```conf
 [Unit]
 Description=Launch Plasma with i3
@@ -53,8 +76,17 @@ Mask `plasma-kwin_x11.target` by running
 Enable the plasma-i3 service by running
 ```systemctl enable plasma-i3 --user```
 
-## Create a new XSession (Plasma < 5.25)
-Create a new file called plasma-i3.desktop in the `/usr/share/xsessions` directory as su.
+To go back to KWin, just unmask the `plasma-kwin_x11.target` and disable your `plasma-i3` service in the same way.
+
+---
+</details>
+
+<details>
+<summary>Option 2: New XSession</summary>
+
+---
+
+Create a new file called `plasma-i3.desktop` in the `/usr/share/xsessions` directory as superuser.
 
 Write the following into `/usr/share/xsessions/plasma-i3.desktop`:
 
@@ -66,14 +98,25 @@ DesktopNames=KDE
 Name=Plasma with i3
 Comment=Plasma with i3
 ```
----
+
 The i3 installation could have installed other .desktop files, you can remove them if you'd like. I only have the default `plasma.desktop` and `plasma-i3.desktop` in my folder.
 
 For the following use your existing i3 config or create a new config using  ```$ i3-config-wizard``` (this also works when you're still in KWin).
 
 Your i3 config should be located at `~/.config/i3/config`, although other locations are possible (depending on your personal configuration).
 
-## Adding stuff to the i3 config
+If you are on Plasma 5.25 or later, you need to configure Plasma, disabling the systemd startup.
+
+```sh
+$ kwriteconfig5 --file startkderc --group General --key systemdBoot false
+$
+```
+
+---
+</details>
+
+### Adding stuff to the i3 config
+
 To improve compatibility with Plasma, add the following lines in your i3 config.
 
 ```sh
@@ -95,66 +138,98 @@ for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move position 70 ppt 81 ppt
 no_focus [class="plasmashell" window_type="notification"]
 ```
-## Killing the existing window that covers everything
+
+### Killing the existing window that covers everything
 
 With my installation, there was a Plasma Desktop window that covered everything and had to be closed with $mod+Shift+q every time I logged in. To circumvent that, follow this tutorial.
 
 <details>
-    <summary>English Plasma settings instructions</summary>
+<summary>English Plasma settings instructions</summary>
+
+---
 
 If you're on an English installation of Plasma, add this line to your i3 config:
 ```for_window [title="Desktop — Plasma"] kill; floating enable; border none```
+
+---
 </details>
 
-
 <details>
-    <summary>Non-English Plasma settings instructions</summary>
+<summary>Non-English Plasma settings instructions</summary>
+
+---
 
 If you're not on the English setting, do this instead. This example is using the German Plasma setting.
 
 #### Find out the name of your Plasma desktop
+
 Directly after logging into your i3 environment, switch to a new workspace with $mod+2. Then enter the following in your terminal:
 
 ```$ wmctrl -l```
 
 The output should contain the name of the Plasma window. Copy the name into your clipboard.
+
 ```
 ...
 0x04400006  0 alex-mi Arbeitsfläche — Plasma
 ...
 ```
+
 #### Set it in the i3 config
 
 Using the name from the clipboard as te title, add the following lines to your i3 config:
+
 ```
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border none
 ```
+
+---
 </details>
 
-## Disabling a shortcut that breaks stuff
+### Disabling a shortcut that breaks stuff
+
 Launch the Plasma System Settings and go to *Category Workspace > Shortcuts > Category System Services > Plasma* and disable the shortcut "Activities..." that uses the combination ```Meta+Q```.
 
-## Using the plasma shutdown screen
+### Using the plasma shutdown screen
+
 To use the plasma shutdown/logout/reboot screen, delete this line (or comment out)
+
 ```
 bindsym $mod+Shift+e exec "i3-nagbar " ...
 ```
+
 and add the following one(s) instead:
-### For KDE 4
+
+<details>
+<summary>For KDE 4</summary>
+
+---
+
 ```sh
 # using plasma's logout screen instead of i3's
 bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 ```
-### For KDE 5
+
+---
+</details>
+
+<details>
+<summary>For KDE 5</summary>
+
+---
+
 ```sh
 # using plasma's logout screen instead of i3's
 bindsym $mod+Shift+e exec --no-startup-id qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 ```
+
 *(Note: This seems to not work on some distros.)*
 
+---
+</details>
 
-## Audio buttons integration
+### Audio buttons integration
 
 To control the volume via DBus with nice popups and sounds, you can add the following lines to the i3config:
 
@@ -165,16 +240,17 @@ bindsym XF86AudioMute exec --no-startup-id qdbus org.kde.kglobalaccel /component
 bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /component/kmix invokeShortcut "mic_mute"
 ```
 
-
-## Setting the Background (optional)
+### Setting the Background (optional)
 
 *(Note: This section is outdated. The "Andromeda" packages are no longer in the Manjaro repositories.)*
 
-By default, i3 doesn't set a background and it requires a third party to do that. I am using the default background provided by the Plasma theme with the name of "Andromeda" and a program called `feh` to set the background.
+By default, i3 doesn't set a background and it requires a third party program to do that. I am using the default background provided by the Plasma theme "Andromeda" and a program called `feh` to set the background.
 
 I installed these following packages for the background and theme:
 
 ```$ sudo pacman -S andromeda-wallpaper plasma5-themes-andromeda sddm-andromeda-theme andromeda-icon-theme```
+
+*(again, Andromeda is no longer available in Manjaro's repos as far as I know).*
 
 and enabled the theming in the Plasma settings.
 
@@ -184,8 +260,7 @@ To set up the same wallpaper in i3, add the following line to the i3 config:
 exec --no-startup-id feh --bg-scale /usr/share/plasma/look-and-feel/org.manjaro.andromeda.desktop/contents/components/artwork/background.png
 ```
 
-
-## Editing the bar (optional)
+### Editing the bar (optional)
 
 The i3 bar has a nice feature that allows it to be hidden, unless you press $mod. I enabled this, because I have the Plasma status bar.
 
@@ -204,9 +279,7 @@ bar {
 
 That's it! I hope this little tutorial helped you, and if you see anything you'd like to improve, absolutely feel free to do so! My issues are open, as are pull requests.
 
-----
-
-## Enable transparency (optional)
+### Enable transparency (optional)
 
 If you'd like to enable transparency, you need to install a compositor. I use picom, and it works really well with minimal (no) configuration.
 First, install picom: `$ sudo pacman -S picom`
@@ -218,8 +291,6 @@ The result is something like this:
 
 ![screenshot of my setup with transparency enabled](Screenshot_20200109_193930.png)
 
-----
-
 ### Dual Kawase blur (optional)
 
 This was a bit more tricky to do. Instead of the normal picom from Manjaro's repository, I used [picom-git](https://aur.archlinux.org/packages/picom-git/) from the AUR.
@@ -227,6 +298,7 @@ This was a bit more tricky to do. Instead of the normal picom from Manjaro's rep
 To configure picom, I copied `/etc/xdg/picom.conf.example` to `~/.config/picom.conf`. Picom should already pick up this config. There are a couple of things you need to change.
 
 To set everything up for the blur effect, set the following settings:
+
 ```sh
 backend = "glx";
 blur_method = "dual_kawase";
