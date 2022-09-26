@@ -70,13 +70,13 @@ Restart=on-failure
 WantedBy=plasma-workspace.target
 ```
 
-Mask `plasma-kwin_x11.target` by running
+Mask `plasma-kwin_x11.service` by running
 ```systemctl mask plasma-kwin_x11.service --user```
 
 Enable the plasma-i3 service by running
 ```systemctl enable plasma-i3 --user```
 
-To go back to KWin, just unmask the `plasma-kwin_x11.target` and disable your `plasma-i3` service in the same way.
+To go back to KWin, just unmask the `plasma-kwin_x11.service` and disable your `plasma-i3` service in the same way.
 
 ---
 </details>
