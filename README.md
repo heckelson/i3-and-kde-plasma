@@ -42,7 +42,7 @@ plasmashell --version
 ```
 
 If you are using Plasma >=5.25, you can either
-(i) create a new systemd user service to run to run i3 instead of KWin upon login (see option 1) or
+(i) create a new systemd user service to run i3 instead of KWin upon login (see option 1) or
 (ii) you can also disable systemd startup and proceed with option 2, creating a new XSession. Option 1 is per-user, whereas option 2 is systemwide and requires root.
 
 If you are using Plasma <5.25, you need to create a new XSession and login to that, which means only option 2 is available for you.
