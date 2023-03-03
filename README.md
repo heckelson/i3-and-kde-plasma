@@ -149,6 +149,13 @@ With my installation, there was a Plasma Desktop window that covered everything 
 ---
 
 If you're on an English installation of Plasma, add this line to your i3 config:
+
+For Plasma >=5.27
+
+```for_window [title="Desktop @ QRect.*"] kill; floating enable; border none```
+
+OR for Plasma <5.27
+
 ```for_window [title="Desktop — Plasma"] kill; floating enable; border none```
 
 ---
