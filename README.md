@@ -231,7 +231,7 @@ bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org
 bindsym $mod+Shift+e exec --no-startup-id qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
 ```
 
-*(Note: This seems to not work on some distros.)*
+*Note: With some distros, even if you have KDE 5 and Qt 5, the above line may not work and would require calling ```qdbus``` instead of ```qdbus-qt5```, as shown under KDE 4.*
 
 ---
 </details>
