@@ -24,7 +24,6 @@ We're gonna install a couple packages that are required or nice-to-haves on i3, 
 * ```i3```, obviously
 * ```feh``` to set up the background
 * ```dmenu``` (not required, but nice to have)
-* ```morc_menu``` (not required)
 * ```wmctrl``` to get some info for the i3 config (if you're not on an English installation of Plasma)
 
 Here's a oneliner on how I installed everything:
@@ -249,3 +248,9 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 ---
 
 ## Personal config
+
+Install:
+
+* ```picom-git```, blur effecct (from aur)
+* ```plasma5-applets-redshift-control-git```, night mode (from aur)
+* ```rofi```, alternative dmenu
