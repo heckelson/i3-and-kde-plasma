@@ -260,4 +260,7 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 * ```Application title```
 * ```Minimal Desktop Indicator```
 * ```Better inline clock```
+# Configuration
 
+copy ```rofi``` & ```i3``` folder in ```~/.config/```
+copy ```walpapers``` & ```plasma``` in ```~/.local/share```
