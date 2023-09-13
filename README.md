@@ -279,7 +279,7 @@ For ```Fixed width``` use ```Fira Code Retina 10pt```
 Install ```Sweet-Mars-transparent-toolbar``` theme  
 Disable translucency with non-integer scaling  
 Reduce window opacity by 5%  
-## Ulauncher
+### Ulauncher
 Theme: ```Transparent Adwaita```
   
 # Configuration
