@@ -290,9 +290,11 @@ Install fuzzy finder extension
   
 # Configuration
 
-copy ```rofi``` & ```i3``` folders in ```~/.config/``` folder  
-copy ```walpapers``` & ```plasma folders``` in ```~/.local/share/``` folder  
-
+* copy ```rofi``` & ```i3``` folders in ```~/.config/``` folder  
+* copy ```walpapers``` & ```plasma folders``` in ```~/.local/share/``` folder  
+* General Behavior set ```select them```  
+* Touchpad set ```Invert scroll direction```  
+* Desktop Session ser ```Start with a empty session```  
 ## Change position volume pop-up
 * Create a new ```togglepopup.service``` service file in the /etc/systemd/system directory.  
 * Add the following lines to the service file:  
