@@ -257,6 +257,8 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 * ```rofi```, alternative dmenu (from pacman)
 * ```kvantum```, theme engine (from pacman)
 * ```libdbusmenu-glib```, fix global menu vscode (from pacman)
+* ```fd```, find file (from pacman)
+* ```fzf```, fuzzer finder (from pacman)
 
 ## Plasmoids
 * ```Application title```
@@ -269,6 +271,7 @@ Splash Screen ```none```
 Plasma Style ```ROUNDED COLOR```  
 Colors ```Sweet```  
 Icons ```Miya-dark```  
+SDDM ```Sugar Candy``` and set at ```/usr/share/sddm/themes/sugar-candy/theme.conf``` file ```PartialBlur="false"``` for disable blur
 
 Install ```Roboto``` & ```FiraCode``` fonts  
 For ```general```, ```Toolbar```, ```Menu```  use ```Roboto regular 10pt```  
@@ -281,7 +284,8 @@ Disable translucency with non-integer scaling
 Reduce window opacity by 5%  
 ### Ulauncher
 Theme: ```Transparent Adwaita```  
-Launch the Plasma System Settings and go to *Startup and Shutdown > Autostart* and add at ulauncher ```--no-window-shadow``` with arguments
+Launch the Plasma System Settings and go to *Startup and Shutdown > Autostart* and add at ulauncher ```--no-window-shadow``` with arguments  
+Install fuzzy finder extension
   
 # Configuration
 
