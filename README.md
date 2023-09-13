@@ -288,7 +288,7 @@ copy ```rofi``` & ```i3``` folders in ```~/.config/``` folder
 copy ```walpapers``` & ```plasma folders``` in ```~/.local/share/``` folder  
 Launch the Plasma System Settings and go to *Startup and Shutdown > Autostart* and add at ulauncher ```--no-window-shadow``` with arguments
 
-## change position volume pop-up
+## Change position volume pop-up
 * Create a new ```togglepopup.service``` service file in the /etc/systemd/system directory.  
 * Add the following lines to the service file:  
 ```conf
