@@ -285,5 +285,29 @@ Theme: ```Transparent Adwaita```
 # Configuration
 
 copy ```rofi``` & ```i3``` folders in ```~/.config/``` folder  
-copy ```walpapers``` & ```plasma folders``` in ```~/.local/share``` folder  
+copy ```walpapers``` & ```plasma folders``` in ```~/.local/share/``` folder  
 Launch the Plasma System Settings and go to *Startup and Shutdown > Autostart* and add at ulauncher ```--no-window-shadow``` with arguments
+
+## change position volume pop-up
+* Create a new ```togglepopup.service``` service file in the /etc/systemd/system directory.  
+* Add the following lines to the service file:  
+* ```
+[Unit]
+Description=Fix file Osd.qml
+After=network.target
+
+[Service]
+ExecStart=/home/luigi/.local/share/plasma/toggle-for-pop-up.sh
+Restart=always
+User=root
+Group=root
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+```
+* Save and exit  
+* Reload ```sudo systemctl daemon-reload```  
+* Enable ```sudo systemctl enable togglepopup.service```
+* Start ```sudo systemctl start togglepopup.service```
+* Reboot
