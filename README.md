@@ -256,11 +256,16 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 * ```ulauncher```, applications launcher (from aur)
 * ```rofi```, alternative dmenu (from pacman)
 * ```kvantum```, theme engine (from pacman)
+* ```libdbusmenu-glib```, fix global menu vscode (from pacman)
 
 # Plasmoids
 * ```Application title```
 * ```Minimal Desktop Indicator```
 * ```Better inline clock```
+
+# Theme & font
+Install ```Roboto``` & ```FiraCode``` fonts
+  
 # Configuration
 
 copy ```rofi``` & ```i3``` folders in ```~/.config/``` folder  
