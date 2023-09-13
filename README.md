@@ -264,4 +264,4 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 # Configuration
 
 copy ```rofi``` & ```i3``` folders in ```~/.config/``` folder  
-copy ```walpapers``` & ```plasma folders``` in ```~/.local/share``` folfer  
+copy ```walpapers``` & ```plasma folders``` in ```~/.local/share``` folder  
