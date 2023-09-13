@@ -305,7 +305,7 @@ Type=simple
 
 [Install]
 WantedBy=multi-user.target
-```
+```  
 * Save and exit  
 * Reload ```sudo systemctl daemon-reload```  
 * Enable ```sudo systemctl enable togglepopup.service```
