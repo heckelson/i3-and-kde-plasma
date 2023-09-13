@@ -258,12 +258,12 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 * ```kvantum```, theme engine (from pacman)
 * ```libdbusmenu-glib```, fix global menu vscode (from pacman)
 
-# Plasmoids
+## Plasmoids
 * ```Application title```
 * ```Minimal Desktop Indicator```
 * ```Better inline clock```
 
-# Theme & font
+## Theme & font
 Application Style ```kvantum```  
 Splash Screen ```none```  
 Plasma Style ```ROUNDED COLOR```  
@@ -275,7 +275,7 @@ For ```general```, ```Toolbar```, ```Menu```  use ```Roboto regular 10pt```
 For ```Window title``` use ```Roboto medium 10pt```  
 For ```small``` use ```Roboto regular 8pt```  
 For ```Fixed width``` use ```Fira Code Retina 10pt```  
-## Kvantum:  
+### Kvantum:  
 Install ```Sweet-Mars-transparent-toolbar``` theme  
 Disable translucency with non-integer scaling  
 Reduce window opacity by 5%  
