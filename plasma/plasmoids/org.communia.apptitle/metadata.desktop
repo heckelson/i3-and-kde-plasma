@@ -1,0 +1,17 @@
+[Desktop Entry]
+Comment=Shows the application title of the focused window
+Encoding=UTF-8
+Icon=preferences-desktop
+Name=Application title
+Type=Service
+X-KDE-PluginInfo-Author=Aleix Quintana Alsius
+X-KDE-PluginInfo-Category=Windows and Tasks
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-Email=kinta@communia.org
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=LGPL
+X-KDE-PluginInfo-Name=org.communia.apptitle
+X-KDE-PluginInfo-Version=1.1
+X-KDE-ServiceTypes=Plasma/Applet
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml

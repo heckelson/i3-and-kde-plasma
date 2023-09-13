@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="showApplicationIcon" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="useFixedWidth" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="fixedWidth" type="Int">
+      <default>100</default>
+    </entry>
+    <entry name="showWindowTitle" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="font" type="Font">
+      <default>Sans Serif</default>
+    </entry>
+    <entry name="bold" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="italic" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="underline" type="Bool">
+      <default>false</default>
+    </entry>
+    <entry name="capitalize" type="Bool">
+      <default>false</default>
+    </entry>  
+    <entry name="color" type="Color">
+      <default>#000000</default>
+    </entry>
+    <entry name="noWindowType" type = "Enum">
+      <choices>
+        <choice name="activityName" />
+        <choice name="desktopName" />
+        <choice name="text" />
+      </choices>
+      <default>activityName</default>
+    </entry>
+    <entry name="noWindowText" type="String">
+        <default>Plasma Desktop</default>
+    </entry>
+    <entry name="textType" type="Int">
+        <default>0</default>
+    </entry>
+    <entry name="useWindowTitleReplace" type="Bool">
+        <default>false</default>
+    </entry>
+    <entry name="replaceTextRegex" type="String">
+        <default>^(.*)\s*[—–\-:]\s*(Mozilla )?([^—–\-:]+)$</default>
+    </entry>
+    <entry name="replaceTextReplacement" type="String">
+        <default>$3 — $1</default>
+    </entry>
+  </group>
+
+</kcfg>

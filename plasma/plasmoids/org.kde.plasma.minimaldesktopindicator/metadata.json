@@ -1,0 +1,27 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "dualitykyle@pm.me",
+                "Name": "Kyle McGrath"
+            }
+        ],
+        "Category": "Windows and Tasks",
+        "Description": "Simple display for virtual desktops",
+        "EnabledByDefault": true,
+        "Icon": "preferences-desktop-virtual",
+        "Id": "org.kde.plasma.minimaldesktopindicator",
+        "License": "GPL-3.0+",
+        "Name": "Minimal Desktop Indicator",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "3.0",
+        "Website": "https://github.com/DualityKyle/plasma-desktop-indicator"
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.virtualdesktops"
+    ]
+}

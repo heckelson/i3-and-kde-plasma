@@ -1,0 +1,37 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "mklapetek@kde.org",
+                "Name": "Martin Klapetek"
+            },
+            {
+                "Email": "marianarlt@icloud.com",
+                "Name": "Marian Arlt"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "Your usual clock, just better and on one line!",
+        "Description[de]": "Deine normale Uhr, nur besser und auf einer Zeile!",
+        "Description[es]": "El reloj de siempre, sólo mejor y en una sola línea!",
+        "Icon": "org.kde.plasma.digitalclock",
+        "Id": "org.kde.plasma.betterinlineclock",
+        "License": "GPL-3.0-or-later",
+        "Name": "Better inline clock",
+        "Name[de]": "Bessere inline Uhr",
+        "Name[es]": "Mejor reloj en línea",
+        "Name[x-test]": "xxBetter inline clockxx",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "3.1",
+        "Website": "https://www.pling.com/p/1245902"
+    },
+    "X-KDE-ParentApp": "",
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.time",
+        "org.kde.plasma.date"
+    ]
+}

@@ -1,0 +1,24 @@
+[Desktop Entry]
+Name=Better inline clock
+Name[de]=Bessere inline Uhr
+Name[es]=Mejor reloj en línea
+Name[x-test]=xxBetter inline clockxx
+
+Comment=Your usual clock, just better and on one line!
+Comment[de]=Deine normale Uhr, nur besser und auf einer Zeile!
+Comment[es]=El reloj de siempre, sólo mejor y en una sola línea!
+Comment[x-test]=xxYour usual clock, just better and on one line!xx
+
+Icon=org.kde.plasma.digitalclock
+Type=Service
+X-KDE-PluginInfo-Author=Marian Arlt
+X-KDE-PluginInfo-Email=marianarlt@icloud.com
+X-KDE-PluginInfo-License=GPL-3.0-or-later
+X-KDE-PluginInfo-Name=org.kde.plasma.betterinlineclock
+X-KDE-PluginInfo-Version=3.1
+X-KDE-PluginInfo-Website=plasma.kde.org
+X-KDE-ServiceTypes=Plasma/Applet
+X-Plasma-API=declarativeappletscript
+X-KDE-PluginInfo-Category=Date and Time
+X-Plasma-Provides=org.kde.plasma.time,org.kde.plasma.date
+X-Plasma-MainScript=ui/main.qml
