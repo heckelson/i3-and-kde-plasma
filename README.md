@@ -263,5 +263,5 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 * ```Better inline clock```
 # Configuration
 
-copy ```rofi``` & ```i3``` folder in ```~/.config/```  
-copy ```walpapers``` & ```plasma``` in ```~/.local/share```
+copy ```rofi``` & ```i3``` folders in ```~/.config/``` folder  
+copy ```walpapers``` & ```plasma folders``` in ```~/.local/share``` folfer  
