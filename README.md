@@ -264,6 +264,11 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 * ```Better inline clock```
 
 # Theme & font
+Application Style ```kvantum```
+Splash Screen ```none```
+Plasma Style ```ROUNDED COLOR```
+
+
 Install ```Roboto``` & ```FiraCode``` fonts
   
 # Configuration
