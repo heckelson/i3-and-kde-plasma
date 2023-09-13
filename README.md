@@ -275,6 +275,10 @@ For ```general```, ```Toolbar```, ```Menu```  use ```Roboto regular 10pt```
 For ```Window title``` use ```Roboto medium 10pt```  
 For ```small``` use ```Roboto regular 8pt```  
 For ```Fixed width``` use ```Fira Code Retina 10pt```  
+Kvantum:  
+Install ```Sweet-Mars-transparent-toolbar``` theme  
+Disable translucency with non-integer scaling  
+Reduce window opacity by 5%  
   
 # Configuration
 
