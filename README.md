@@ -296,7 +296,14 @@ Install fuzzy finder extension
 * Touchpad set ```Invert scroll direction```  
 * Desktop Session ser ```Start with a empty session```
 
-## VSCODE SETTINGS  
+## VSCODE 
+### Extension  
+* ```Auto Rename Tag```  
+* ```Bearded Theme```
+* ```Material Icon Theme```
+* ```Prettier - Code Formatter```
+* ```ES7+ React/Redux/React-Native snippets```  
+### Settings
 ```conf
 {
   "workbench.colorTheme": "Bearded Theme Vivid Purple",
