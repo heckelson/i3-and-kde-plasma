@@ -271,6 +271,10 @@ Colors ```Sweet```
 Icons ```Miya-dark```  
 
 Install ```Roboto``` & ```FiraCode``` fonts  
+For ```general```, ```Toolbar```, ```Menu```  use ```Roboto regular 10pt```  
+For ```Window title``` use ```Roboto medium 10pt```  
+For ```small``` use ```Roboto regular 8pt```  
+For ```Fixed width``` use ```Fira Code Retina 10pt```  
   
 # Configuration
 
