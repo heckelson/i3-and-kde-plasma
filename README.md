@@ -253,4 +253,4 @@ Install:
 
 * ```picom-git```, blur effecct (from aur)
 * ```plasma5-applets-redshift-control-git```, night mode (from aur)
-* ```rofi```, alternative dmenu
+* ```rofi```, alternative dmenu (from pacman)
