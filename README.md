@@ -267,7 +267,8 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 Application Style ```kvantum```
 Splash Screen ```none```
 Plasma Style ```ROUNDED COLOR```
-
+Colors ```Sweet```
+Icons ```Miya-dark```
 
 Install ```Roboto``` & ```FiraCode``` fonts
   
