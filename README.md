@@ -294,7 +294,26 @@ Install fuzzy finder extension
 * copy ```walpapers``` & ```plasma folders``` in ```~/.local/share/``` folder  
 * General Behavior set ```select them```  
 * Touchpad set ```Invert scroll direction```  
-* Desktop Session ser ```Start with a empty session```  
+* Desktop Session ser ```Start with a empty session```
+
+## VSCODE SETTINGS  
+```conf
+{
+  "workbench.colorTheme": "Bearded Theme Vivid Purple",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontWeight": "400",
+  "editor.fontSize": 18,
+  "editor.minimap.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "editor.fontLigatures": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "json.schemas": [
+  
+  ]
+}
+```
 ## Change position volume pop-up
 * Create a new ```togglepopup.service``` service file in the /etc/systemd/system directory.  
 * Add the following lines to the service file:  
