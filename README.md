@@ -290,8 +290,9 @@ Launch the Plasma System Settings and go to *Startup and Shutdown > Autostart* a
 
 ## change position volume pop-up
 * Create a new ```togglepopup.service``` service file in the /etc/systemd/system directory.  
-* Add the following lines to the service file:  
-```
+* Add the following lines to the service file:
+<section>
+
 [Unit]
 Description=Fix file Osd.qml
 After=network.target
@@ -305,7 +306,8 @@ Type=simple
 
 [Install]
 WantedBy=multi-user.target
-```  
+
+</section>  
 * Save and exit  
 * Reload ```sudo systemctl daemon-reload```  
 * Enable ```sudo systemctl enable togglepopup.service```
