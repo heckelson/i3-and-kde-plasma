@@ -322,9 +322,10 @@ exec --no-startup-id picom --experimental-backends -b
 
 > Preview image:
 
-## Personal conf
 > ![with blur and looking good](images/Screenshot_20200203_005043.png)
 
 ---
 
 You've reached the end! That's it! I hope this little tutorial helped you, and if you see anything you'd like to improve, absolutely feel free to do so! My issues are open, as are pull requests.
+
+## Personal config
