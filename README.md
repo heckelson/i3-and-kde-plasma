@@ -247,9 +247,9 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 
 ---
 
-## Personal config
+# Personal config
 
-Install:
+## Packages:
 
 * ```picom-git```, blur effecct (from aur)
 * ```plasma5-applets-redshift-control-git```, night mode (from aur)
