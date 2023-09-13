@@ -286,7 +286,9 @@ Reduce window opacity by 5%
 ### Ulauncher
 Theme: ```Transparent Adwaita```  
 Launch the Plasma System Settings and go to *Startup and Shutdown > Autostart* and add at ulauncher ```--no-window-shadow``` with arguments  
-Install fuzzy finder extension
+Install fuzzy finder extension  
+### Bar Plasmoid position
+[Application title] [Global Menu] [Minimal Desktop Indicator] [Panel Spacer] [Better Inline Clock] [Network] [Bluetooth] [Volume] [Battery] [Redshift] [System Tray] [Lock/Logout] [Margin Spacer]
   
 # Configuration
 
