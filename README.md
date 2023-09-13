@@ -271,7 +271,7 @@ Splash Screen ```none```
 Plasma Style ```ROUNDED COLOR```  
 Colors ```Sweet```  
 Icons ```Miya-dark```  
-SDDM ```Sugar Candy``` and set at ```/usr/share/sddm/themes/sugar-candy/theme.conf``` file ```PartialBlur="false"``` for disable blur
+SDDM ```Sugar Candy``` and set at ```/usr/share/sddm/themes/sugar-candy/theme.conf``` file ```PartialBlur="false"``` for disable blur & use ```boot.jpg``` image 
 
 Install ```Roboto``` & ```FiraCode``` fonts  
 For ```general```, ```Toolbar```, ```Menu```  use ```Roboto regular 10pt```  
