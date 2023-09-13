@@ -254,3 +254,10 @@ bindsym XF86AudioMicMute exec --no-startup-id qdbus org.kde.kglobalaccel /compon
 * ```picom-git```, blur effecct (from aur)
 * ```plasma5-applets-redshift-control-git```, night mode (from aur)
 * ```rofi```, alternative dmenu (from pacman)
+* * ```kvantum```, theme engine (from pacman)
+
+# Plasmoids
+* ```Application title```
+* ```Minimal Desktop Indicator```
+* ```Better inline clock```
+
