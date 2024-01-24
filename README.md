@@ -28,7 +28,7 @@ We're gonna install a couple packages that are required or nice-to-haves on i3, 
 * ```wmctrl``` to get some info for the i3 config (if you're not on an English installation of Plasma)
 
 Here's a oneliner on how I installed everything:
-```$ sudo pacman -Syu && sudo pacman -S i3 feh i3-dmenu-desktop morc_menu wmctrl```
+```$ sudo pacman -Syu && sudo pacman -S i3 feh j4-dmenu-desktop morc_menu wmctrl```
 
 ---
 
