@@ -151,11 +151,11 @@ If you're on an English installation of Plasma, add this line to your i3 config:
 
 For Plasma >=5.27
 
-```for_window [title="Desktop @ QRect.*"] kill; floating enable; border none```
+```for_window [title="Desktop @ QRect.*"] kill, floating enable, border none```
 
 OR for Plasma <5.27
 
-```for_window [title="Desktop — Plasma"] kill; floating enable; border none```
+```for_window [title="Desktop — Plasma"] kill, floating enable, border none```
 
 ---
 </details>
@@ -186,8 +186,8 @@ The output should contain the name of the Plasma window. Copy the name into your
 Using the name from the clipboard as te title, add the following lines to your i3 config:
 
 ```
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
-for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border none
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+for_window [title="Arbeitsfläche — Plasma"] kill, floating enable, border none
 ```
 
 ---
